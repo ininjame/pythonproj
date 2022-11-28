@@ -10,7 +10,7 @@ from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 
 
-def calmap(ax, year, data):
+def calmap(ax, year, data, col_map='RdYlBu'):
     ax.tick_params('x', length=0, labelsize="medium", which='major')
     ax.tick_params('y', length=0, labelsize="x-small", which='major')
 
@@ -50,7 +50,7 @@ def calmap(ax, year, data):
 
     # Showing data
     ax.imshow(data, extent=[0,53,0,7], zorder=10, vmin=0, vmax=int(np.nanmax(data)),
-              cmap="RdYlBu", origin="lower", alpha=.75)
+              cmap=col_map, origin="lower", alpha=.75)
 
 def create_input(data, year):
 
